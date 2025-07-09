@@ -9,15 +9,13 @@ import sys
 import os
 import re
 from pathlib import Path
-from typing import List, Optional, Dict, Set, Tuple
+from typing import List, Dict, Set, Tuple
 from datetime import datetime
 
 try:
     from scripts.version import __version__, AUTHOR, HOMEPAGE, DESCRIPTION
 except ImportError:
     # When running directly, adjust the import path
-    import sys
-    from pathlib import Path
     script_dir = Path(__file__).parent
     sys.path.insert(0, str(script_dir.parent))
     from scripts.version import __version__, AUTHOR, HOMEPAGE, DESCRIPTION
@@ -590,7 +588,7 @@ def analyze_header_dependencies(
             # order
             ready_headers = [h for h in headers if h in remaining_headers]
             verbose_print(
-                f"Warning: Possible circular dependency among headers",
+                "Warning: Possible circular dependency among headers",
                 verbose)
 
         for header in ready_headers:
@@ -652,12 +650,12 @@ def main() -> int:
         # Resolve dependency order
         ordered_files = resolve_dependency_order(
             dependency_graph, file_order, args.verbose)
-        verbose_print(f"Dependency resolution complete", args.verbose)
+        verbose_print("Dependency resolution complete", args.verbose)
 
         # Analyze header dependencies and reorder if necessary
         ordered_files = analyze_header_dependencies(
             ordered_files, args.verbose)
-        verbose_print(f"Header dependency analysis complete", args.verbose)
+        verbose_print("Header dependency analysis complete", args.verbose)
 
         # Process and amalgamate files
         amalgamated_content = amalgamate_files(

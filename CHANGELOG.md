@@ -5,24 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - v1.0.2
+## [1.0.2] - 2025-07-09
 
 ### Added
 - Multi-version Python build testing script (`test_build_multiversion.py`)
 - Comprehensive build testing across Python 3.9, 3.10, 3.11, and 3.12
 - Enhanced Makefile with `test-multi` target for multi-version testing
-- Build test summary documentation
-- Package build verification in CI pipeline
 
 ### Changed
 - **BREAKING**: Dropped support for Python 3.8
 - Updated minimum Python requirement to 3.9+ in `pyproject.toml`
 - Updated GitHub Actions workflow to test Python 3.9-3.12 only
 - Enhanced CI pipeline with package build testing
+- Improved code quality with flake8 compliance
 
 ### Fixed
 - Fixed syntax errors in test files (`test_dependency_parser.py`, `test_include_guard_removal.py`)
 - Corrected unterminated f-string literals that caused test failures on older Python versions
+- Removed unused imports (`typing.Optional`) for cleaner code
+- Fixed duplicate imports in try/except blocks
+- Corrected f-string placeholders without variables
 
 ## [1.0.1] - 2025-07-09
 
@@ -81,6 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Contributing guidelines
 - API documentation in docstrings
 
-[Unreleased]: https://github.com/ChuOkupai/singleston/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/ChuOkupai/singleston/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/ChuOkupai/singleston/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ChuOkupai/singleston/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ChuOkupai/singleston/releases/tag/v1.0.0
