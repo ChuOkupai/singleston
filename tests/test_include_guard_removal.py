@@ -252,10 +252,7 @@ void function_in_{filename.replace('.', '_')}();
 
                 # Function should remain
                 self.assertIn(
-                    f"function_in_{
-                        filename.replace(
-                            '.',
-                            '_')}",
+                    f"function_in_{filename.replace('.', '_')}",
                     result.stdout)
 
 

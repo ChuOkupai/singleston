@@ -34,7 +34,7 @@ Perfect for creating single-header libraries, distributing code, simplifying bui
 
 ## 📦 Prerequisites
 
-- **Python 3.8+**: Required for running the amalgamator
+- **Python 3.9+**: Required for running the amalgamator
 - **C/C++ Compiler**: clang or gcc with `-MMD` flag support for dependency generation
 - **Make**: For using the provided build system (optional)
 

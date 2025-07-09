@@ -5,6 +5,7 @@ help:
 	@echo "  install-dev  - Install development dependencies"
 	@echo "  lint         - Run code linting"
 	@echo "  test         - Run all unit tests"
+	@echo "  test-multi   - Test build process across Python 3.9, 3.10, 3.11, 3.12"
 	@echo "  coverage     - Run tests with coverage report"
 	@echo "  version      - Show current version"
 	@echo "  build        - Build distribution packages"
@@ -27,6 +28,9 @@ lint:
 test:
 	python3 -m unittest discover tests/ -v
 
+test-multi:
+	python3 test_build_multiversion.py
+
 coverage:
 	python3 -m coverage run --source=scripts -m unittest discover tests/ -v
 	python3 -m coverage report -m
@@ -47,4 +51,4 @@ upload-test:
 script-version:
 	@python3 scripts/singleston.py --version
 
-.PHONY: clean check help install-dev lint test coverage version build upload upload-test script-version
+.PHONY: clean check help install-dev lint test test-multi coverage version build upload upload-test script-version

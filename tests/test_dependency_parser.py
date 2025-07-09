@@ -231,9 +231,7 @@ main.o: main.cpp header.h
         # Create all header files
         for header in headers:
             self.create_temp_file(
-                header, f'#pragma once\nvoid func_{
-                    header.replace(
-                        ".", "_")}();')
+                header, f'#pragma once\nvoid func_{header.replace(".", "_")}();')
 
         result = self.run_export_script([deps_file])
         self.assertSuccessful(result)

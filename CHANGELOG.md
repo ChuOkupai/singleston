@@ -8,14 +8,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - v1.0.2
 
 ### Added
-- GitHub Actions CI/CD workflow for automated testing
-- Multi-Python version testing (3.8, 3.9, 3.10, 3.11, 3.12)
-- Automated testing on both `main` and `dev` branches
-- Code linting with flake8 in CI pipeline
-- Script execution validation in automated tests
+- Multi-version Python build testing script (`test_build_multiversion.py`)
+- Comprehensive build testing across Python 3.9, 3.10, 3.11, and 3.12
+- Enhanced Makefile with `test-multi` target for multi-version testing
+- Build test summary documentation
+- Package build verification in CI pipeline
+
+### Changed
+- **BREAKING**: Dropped support for Python 3.8
+- Updated minimum Python requirement to 3.9+ in `pyproject.toml`
+- Updated GitHub Actions workflow to test Python 3.9-3.12 only
+- Enhanced CI pipeline with package build testing
 
 ### Fixed
-- Missing `CHANGELOG.md` entries for version 1.0.1
+- Fixed syntax errors in test files (`test_dependency_parser.py`, `test_include_guard_removal.py`)
+- Corrected unterminated f-string literals that caused test failures on older Python versions
 
 ## [1.0.1] - 2025-07-09
 
