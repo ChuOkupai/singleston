@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased] - v1.0.2
 
 ### Added
+- GitHub Actions CI/CD workflow for automated testing
+- Multi-Python version testing (3.8, 3.9, 3.10, 3.11, 3.12)
+- Automated testing on both `main` and `dev` branches
+- Code linting with flake8 in CI pipeline
+- Script execution validation in automated tests
+
+### Fixed
 - Missing `CHANGELOG.md` entries for version 1.0.1
 
 ## [1.0.1] - 2025-07-09
