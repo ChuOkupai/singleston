@@ -138,8 +138,7 @@ def validate_arguments(args: argparse.Namespace) -> None:
         # Check if output file exists and is writable
         if output_path.exists() and not os.access(output_path, os.W_OK):
             print(
-                f"\033[91merror\033[0m: cannot write output file: \"{
-                    args.output}\" (permission denied)",
+                f"\033[91merror\033[0m: cannot write output file: \"{args.output}\" (permission denied)",
                 file=sys.stderr)
             sys.exit(1)
 
@@ -233,9 +232,7 @@ def resolve_dependency_order(
             ('.cpp', '.c', '.cc', '.cxx'))]
 
     verbose_print(
-        f"Found {
-            len(headers)} headers and {
-            len(sources)} sources",
+        f"Found {len(headers)} headers and {len(sources)} sources",
         verbose)
 
     # Analyze header dependencies and reorder them properly
@@ -276,8 +273,7 @@ def resolve_dependency_order(
                     ready_sources = [source]
                     break
             verbose_print(
-                f"Warning: Possible circular dependency, adding {
-                    ready_sources[0]}", verbose)
+                f"Warning: Possible circular dependency, adding {ready_sources[0]}", verbose)
 
         # Add ready sources in order of first appearance
         for source in ready_sources:
@@ -628,9 +624,7 @@ def main() -> int:
 
     # Print initial verbose information
     verbose_print(
-        f"Processing dependency files: {
-            ', '.join(
-                args.deps_files)}",
+        f"Processing dependency files: {', '.join(args.deps_files)}",
         args.verbose)
 
     if args.output:
@@ -652,8 +646,7 @@ def main() -> int:
         dependency_graph, file_order = parse_dependency_files(
             args.deps_files, args.verbose)
         verbose_print(
-            f"Found {
-                len(dependency_graph)} source files",
+            f"Found {len(dependency_graph)} source files",
             args.verbose)
 
         # Resolve dependency order
